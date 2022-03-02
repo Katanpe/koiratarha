@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aloitussivu</title>
+    <link href="styleIndex.css" rel="stylesheet">
+    <title>Home page</title>
 </head>
 <body>
-
+<!-- saa muuttaa vapaasti -->
+<header>
+    <h1>Koiratarha</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="">Home page</a></li>
+        <li><a href="">Maps</a></li>
+        <li><a href="">Media</a></li>
+    </ul>
+</nav>
+<form action="http://api.weatherapi.com">
+    <section>
+        <br/>
+            <p>
+                <button type="submit">Update</button>
+            </p>
+        <br/>
+        <ul id="weatherPrint">
+            <!-- Space for weather -->
+        </ul>
+    </section>
+</form>
+<script src="weather.js"></script>
 </body>
 </html>

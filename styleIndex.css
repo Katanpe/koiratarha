@@ -1,0 +1,56 @@
+header {
+
+}
+
+body {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+ul {
+    background: brown;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    border: 3px solid brown;
+    justify-content: center;
+}
+
+li {
+    background: sandybrown;
+    margin: 0;
+    padding: 0;
+    border-right: 3px solid brown;
+}
+
+li a {
+    color: black;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a:hover {
+
+}
+
+section p {
+    align-content: center;
+}
+
+button {
+    background: sandybrown;
+    color: black;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content;
+    line-height: 1.5em;
+    margin: auto;
+    font-family: inherit;
+}
