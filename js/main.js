@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const routingAPI = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
 
 // haetaan reitti lähtöpisteen ja kohteen avulla
-function haeReitti(lahto, kohde) {
+function getRoute(lahto, kohde) {
   // GraphQL haku
   const haku = `{
   plan(
@@ -45,7 +45,7 @@ function haeReitti(lahto, kohde) {
   fetch(routingAPI, fetchOptions).then(function (vastaus) {
     return vastaus.json();
   }).then(function (tulos) {
-    console.log(tulos.data.plan.itineraries[0].legs);
+    //console.log(tulos.data.plan.itineraries[0].legs);
     const googleKoodattuReitti = tulos.data.plan.itineraries[0].legs;
     for (let i = 0; i < googleKoodattuReitti.length; i++) {
       let color = '';
@@ -88,10 +88,13 @@ const options = {
 //paikkatiedot haettu onnistuneesti
 function success(pos) {
   const crd = pos.coords;
+  console.log(crd);
 
-  const ownLocation = addMarker(crd, 'Olen tässä');
+  //lisätään oman sijainnin marker
+  const ownLocation = addMarker(crd, 'Olen tässä!');
   ownLocation.openPopup();
 
+  //lisätään markerit kohdepaikoille
   getLocations(crd).then(function(pointsOfInterest) {
     for (let i = 0; i < pointsOfInterest.length; i++) {
       const placeName = pointsOfInterest[i].name_fi;
@@ -99,10 +102,19 @@ function success(pos) {
         latitude: pointsOfInterest[i].latitude,
         longitude: pointsOfInterest[i].longitude,
       };
-      addMarker(coordinates, placeName);
+      const marker = addMarker(coordinates, placeName);
+      marker.on('click', function(){
+        document.querySelector('#name').innerHTML = pointsOfInterest[i].name_fi;
+        document.querySelector('#address').innerHTML = pointsOfInterest[i].street_address_fi;
+        document.querySelector('#city').innerHTML = pointsOfInterest[i].address_city_fi;
+        console.log(pointsOfInterest[i]);
+      })
     }
   });
-  haeReitti(crd, {latitude: 60.16, longitude: 24.92})
+
+  navigationListener();
+
+  getRoute(crd, {latitude: 60.1636578, longitude: 24.9289657})
 }
 
 //paikkatietojen hakemisessa on tapahtunut virhe
@@ -131,4 +143,10 @@ function addMarker(crd, teksti) {
   bindPopup(teksti);
 }
 
+//navigointinappia painaessa
+function navigationListener() {
+  document.querySelector('#buttonNavigation').addEventListener('click', function () {
+    console.log('Klikattu!');
+  })
+}
 
