@@ -15,11 +15,11 @@ weather_form.addEventListener('submit', function(event) {
         console.log(layout);
         for(let i = 0; i < layout.length; i++) {
 
-          temp = layout[i].show.temp_c;
-          let listTemp = document.createElement('li');
-          listTemp.innerHTML = temp;
-          document.body.appendChild(listTemp);
-          display.appendChild(listTemp);
+          max = layout[i].forecast.forecastday.day.maxtemp_c;
+          let listMax = document.createElement('li');
+          listMax.innerHTML = max;
+          document.body.appendChild(listMax);
+          display.appendChild(listMax);
 
         }
       }).
