@@ -5,6 +5,8 @@ const map = L.map('map').setView([60.172659, 24.926596],11);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
+let layerGroup = L.layerGroup();
+
 
 //paikkatiedot haettu onnistuneesti
 function success(pos) {
@@ -33,7 +35,8 @@ function success(pos) {
           latitude: pointsOfInterest[i].latitude,
           longitude: pointsOfInterest[i].longitude,
         };
-        console.log(targetCrd);
+        const button = document.querySelector('#buttonNavigation');
+        button.replaceWith(button.cloneNode(true));
         document.querySelector('#buttonNavigation').addEventListener('click', function () {
           console.log('Klikattu!');
           getRoute(crd, targetCrd);
@@ -71,6 +74,7 @@ function getLocations(crd) {
 
 // haetaan reitti lähtöpisteen ja kohteen avulla
 function getRoute(lahto, kohde) {
+  layerGroup.clearLayers();
   const routingAPI = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
   // GraphQL haku
   const haku = `{
@@ -129,9 +133,11 @@ function getRoute(lahto, kohde) {
       }
       const reitti = (googleKoodattuReitti[i].legGeometry.points);
       const pisteObjektit = L.Polyline.fromEncoded(reitti).getLatLngs(); // fromEncoded: muutetaan Googlekoodaus Leafletin Polylineksi
-      L.polyline(pisteObjektit).setStyle({
+      console.log(layerGroup.getLayers());
+      layerGroup.addLayer(L.polyline(pisteObjektit).setStyle({
         color
-      }).addTo(map);
+      }));
+      layerGroup.addTo(map);
     }
     map.fitBounds([[lahto.latitude, lahto.longitude], [kohde.latitude, kohde.longitude]]);
   }).catch(function (e) {
@@ -146,10 +152,4 @@ function addMarker(crd, teksti) {
   bindPopup(teksti);
 }
 
-//navigointinappia painaessa
-function navigationListener() {
-  document.querySelector('#buttonNavigation').addEventListener('click', function () {
-    console.log('Klikattu!');
-  })
-}
 
