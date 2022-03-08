@@ -1,0 +1,134 @@
+header {
+    width: 100%;
+}
+
+main {
+    width: 40%;
+}
+
+aside {
+    width: 55%;
+    position: relative;
+    left: 35px;
+}
+
+#map {
+    min-width: 420px;
+    width: 60%;
+    height: 500px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+#content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body {
+    background: #FFF1E6;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul {
+    background: #CB997E;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    border: 3px solid #CB997E;
+    justify-content: center;
+}
+
+nav li {
+    background: #B7B7A4;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #F0EFEB;
+}
+
+nav li a {
+    color: black;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+nav li:nth-last-child(3) {
+    border-right: none;
+}
+
+nav li:nth-last-child(2) {
+    border-right: none;
+}
+
+nav li a:hover {
+
+}
+
+#pics {
+}
+
+section {
+    background: #CB997E;
+    border-radius: 50px;
+}
+
+section p {
+    align-content: center;
+}
+
+section ul {
+    list-style-type: none;
+    flex-flow: column wrap;
+}
+
+section li {
+    background: none;
+}
+
+section li:last-child {
+    padding-bottom: 25px;
+}
+
+button {
+    background: #B7B7A4;
+    color: black;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    font-family: inherit;
+}
+
+.lightbox-link {
+    width: 150px;
+    padding: 20px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        flex-flow: column wrap;
+    }
+}
+
+#textsOfPage {
+    display: flex;
+    flex-wrap: wrap;
+    background: #EDDCD2;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#radioGroupGroup, #placeInfoGroup {
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+#submitBtn, #navigationBtn {
+    margin: 20px;
+}

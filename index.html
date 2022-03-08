@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aloitussivu</title>
+    <title>Kartat</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" rel="stylesheet">
+    <link href="css/appStyle.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="content">
+    <header>
+        <h1>Koiratarha</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Kartat</a></li>
+                <li><a href="weather.html">Sää ja kuvat</a></li>
+                <li><a href="private.html">Yksityistä</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="map"></div>
+
+    <div id="textsOfPage">
+        <div id="radioGroupGroup">
+            <p>Näytä kartalla:</p>
+            <div id="radioGroup">
+                <div>
+                    <input type="radio" id="placeChoice1"
+                           name="place" value="enclosure">
+                    <label for="placeChoice1">Aitaukset</label>
+                </div>
+                <div>
+                    <input type="radio" id="placeChoice2"
+                           name="place" value="trail">
+                    <label for="placeChoice2">Hiihtoladut</label>
+                </div>
+                <div>
+                    <input type="radio" id="placeChoice3"
+                           name="place" value="toilet">
+                    <label for="placeChoice3">Käymälät</label>
+                </div>
+                <div>
+                    <input type="radio" id="placeChoice4"
+                           name="place" value="forest">
+                    <label for="placeChoice4">Metsät</label>
+                </div>
+                <div>
+                    <input type="radio" id="placeChoice5"
+                           name="place" value="beach">
+                    <label for="placeChoice5">Uimarannat</label>
+                </div>
+                <div>
+                    <input type="radio" id="placeChoice6"
+                           name="place" value="all">
+                    <label for="placeChoice6">Kaikki</label>
+                </div>
+            </div>
+            <div>
+                <button id="submitBtn">Valitse</button>
+            </div>
+        </div>
+        <div id="placeInfoGroup">
+            <div id="placeInfo">
+                <p id="name"></p>
+                <p id="address"></p>
+                <p id="city"></p>
+            </div>
+            <div>
+                <button id="navigationBtn">Hae reitti</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="js/Polyline.encoded.js"></script>
+<script src="js/main.js"></script>
 
 
 </body>
