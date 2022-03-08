@@ -1,14 +1,27 @@
 header {
+    width: 100%;
+}
 
+main {
+    width: 40%;
+}
+
+aside {
+    width: 55%;
+    position: relative;
+    left: 10px;
+}
+
+#content {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 body {
     text-align: center;
-    display: flex;
-    flex-flow: column wrap;
 }
 
-ul {
+nav ul {
     background: brown;
     list-style-type: none;
     display: flex;
@@ -17,30 +30,50 @@ ul {
     justify-content: center;
 }
 
-li {
+nav li {
     background: sandybrown;
     margin: 0;
     padding: 0;
     border-right: 3px solid brown;
 }
 
-li a {
+nav li a {
     color: black;
     display: block;
     padding: 10px 15px;
     text-decoration: none;
 }
 
-li:last-child {
+nav li:last-child {
     border-right: none;
 }
 
-li a:hover {
+nav li a:hover {
 
+}
+
+#pics {
+}
+
+section {
+    background: brown;
 }
 
 section p {
     align-content: center;
+}
+
+section ul {
+    list-style-type: none;
+    flex-flow: column wrap;
+}
+
+section li {
+    background: none;
+}
+
+section li:last-child {
+    padding-bottom: 25px;
 }
 
 button {
@@ -53,4 +86,10 @@ button {
     line-height: 1.5em;
     margin: auto;
     font-family: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        flex-flow: column wrap;
+    }
 }

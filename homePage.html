@@ -7,28 +7,41 @@
 </head>
 <body>
 <!-- saa muuttaa vapaasti -->
-<header>
-    <h1>Koiratarha</h1>
-</header>
-<nav>
-    <ul>
-        <li><a href="homePage.html">Home page</a></li>
-        <li><a href="">Maps</a></li>
-        <li><a href="">Media</a></li>
-    </ul>
-</nav>
-<form action="http://api.weatherapi.com">
-    <section>
-        <br/>
-            <p>
-                <button type="submit">Update</button>
-            </p>
-        <br/>
-        <ul id="weatherPrint">
-            <!-- Space for weather -->
-        </ul>
-    </section>
-</form>
+<div id="content">
+
+    <header>
+        <h1>Koiratarha</h1>
+        <nav>
+            <ul>
+                <li><a href="homePage.html">Home page</a></li>
+                <li><a href="">Maps</a></li>
+                <li><a href="">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="http://api.weatherapi.com">
+            <section>
+                <br/>
+                    <p>
+                        <button type="submit">Weather</button>
+                    </p>
+                <br/>
+                <ul id="weatherPrint">
+                    <!-- Space for weather -->
+                </ul>
+            </section>
+        </form>
+    </main>
+
+    <aside>
+        <section>
+            <div id="pics">Space for pics! or something..</div>
+        </section>
+    </aside>
+
+</div>
 <script src="js/weather.js"></script>
 </body>
 </html>
