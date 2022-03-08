@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/homeStyle.css" rel="stylesheet">
+    <link href="lightbox2-2.11.3/dist/css/lightbox.css" rel="stylesheet">
     <title>Home page</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
         <h1>Koiratarha</h1>
         <nav>
             <ul>
-                <li><a href="homePage.html">Pääsivu</a></li>
+                <li><a href="homePage.html">Sää</a></li>
                 <li><a href="">Kartat</a></li>
                 <li><a href="">Media</a></li>
             </ul>
@@ -37,11 +38,16 @@
 
     <aside>
         <section>
-            <div id="pics">Space for pics! or something..</div>
+            <div id="pics">
+                <a class="lightbox-link" href="kuvat/Kuvia/1kuva.jpg" data-lightbox="image-1" data-title="1) Rule of thirds">
+                    <img src="kuvat/thumbnails/kuva1.png" style="width: 150px">
+                </a>
+            </div>
         </section>
     </aside>
 
 </div>
 <script src="js/weather.js"></script>
+<script src="lightbox2-2.11.3/dist/js/lightbox-plus-jquery.js"></script>
 </body>
 </html>
