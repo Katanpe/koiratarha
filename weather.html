@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/appStyle.css" rel="stylesheet">
+    <link href="lightbox2-2.11.3/dist/css/lightbox.css" rel="stylesheet">
+    <title>Home page</title>
+</head>
+<body>
+<!-- saa muuttaa vapaasti -->
+<div id="content">
+
+    <header>
+        <h1>Koiratarha</h1>
+        <nav>
+            <ul>
+                <li><a href="">Kartat</a></li>
+                <li><a href="weather.html">Sää ja kuvat</a></li>
+                <li><a href="">Yksityistä</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="http://api.weatherapi.com">
+            <section>
+                <br/>
+                    <p>
+                        <button type="submit">Sää</button>
+                    </p>
+                <br/>
+                <ul id="weatherPrint">
+                    <!-- Space for weather -->
+                </ul>
+            </section>
+        </form>
+    </main>
+
+    <aside>
+        <section>
+            <div id="pics">
+                <br/>
+                <h2>
+                    Kuvia
+                </h2>
+                <a class="lightbox-link" href="kuvat/Kuvia/1kuva.jpg" data-lightbox="image-1" data-title="1) Rule of thirds">
+                    <img src="kuvat/thumbnails/kuva1.png" style="width: 150px">
+                </a>
+                <br/>
+            </div>
+        </section>
+    </aside>
+
+</div>
+<script src="js/weather.js"></script>
+<script src="lightbox2-2.11.3/dist/js/lightbox-plus-jquery.js"></script>
+</body>
+</html>
