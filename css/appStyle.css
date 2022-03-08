@@ -12,6 +12,11 @@ aside {
     left: 35px;
 }
 
+#map {
+    width: 100%;
+    height: 400px;
+}
+
 #content {
     display: flex;
     flex-flow: row wrap;
