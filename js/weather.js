@@ -1,6 +1,6 @@
 'use strict';
 
-const weather_api_forecast = 'http://api.weatherapi.com/v1/forecast.json?key=6336235ca72d4b6eb28180539220103&q=Helsinki&days=5&aqi=yes&alerts=yes';
+const weather_api_forecast = 'http://api.weatherapi.com/v1/forecast.json?key=6336235ca72d4b6eb28180539220103&q=Helsinki&days=5&aqi=yes&alerts=yes&lang=fi';
 const display = document.querySelector('#weatherPrint');
 const weather_form = document.querySelector('form');
 let current, date, temp, weather, feeling, forecast, futureDate, max, min, average, chanceR, chanceS, fore_weather, sunrise, sunset, time;
@@ -17,7 +17,7 @@ weather_form.addEventListener('submit', function(event) {
         forecast = layout.forecast.forecastday;
 
         let infoCurrent = document.createElement('h2');
-        infoCurrent.innerHTML = 'Current weather';
+        infoCurrent.innerHTML = 'Sää';
         document.body.appendChild(infoCurrent);
         display.appendChild(infoCurrent);
 
@@ -27,26 +27,26 @@ weather_form.addEventListener('submit', function(event) {
         document.body.appendChild(currentDate);
         display.appendChild(currentDate);
 
-        temp = 'Temperature: ' + current.temp_c + ' °C';
+        temp = 'Lämpötila: ' + current.temp_c + ' °C';
         let listTemp = document.createElement('li');
         listTemp.innerHTML = temp;
         document.body.appendChild(listTemp);
         display.appendChild(listTemp);
 
-        feeling = 'Feels like: ' + current.feelslike_c + ' °C';
+        feeling = 'Tuntuu kuin: ' + current.feelslike_c + ' °C';
         let listFeeling = document.createElement('li');
         listFeeling.innerHTML = feeling;
         document.body.appendChild(listFeeling);
         display.appendChild(listFeeling);
 
-        weather = 'Condition: ' + current.condition.text;
+        weather = 'Säätila: ' + current.condition.text;
         let listWeather = document.createElement('li');
         listWeather.innerHTML = weather;
         document.body.appendChild(listWeather);
         display.appendChild(listWeather);
 
         let infoForecast = document.createElement('h2');
-        infoForecast.innerHTML = 'Forecast';
+        infoForecast.innerHTML = 'Sääennuste';
         document.body.appendChild(infoForecast);
         display.appendChild(infoForecast);
 
@@ -58,49 +58,49 @@ weather_form.addEventListener('submit', function(event) {
             document.body.appendChild(listDate);
             display.appendChild(listDate);
 
-            max = 'Max temperature: ' + forecast[i].day.maxtemp_c + ' °C';
+            max = 'Korkein lämpötila: ' + forecast[i].day.maxtemp_c + ' °C';
             let listMax = document.createElement('li');
             listMax.innerHTML = max;
             document.body.appendChild(listMax);
             display.appendChild(listMax);
 
-            min = 'Min temperature: ' + forecast[i].day.mintemp_c + ' °C';
+            min = 'Matalin lämpötila: ' + forecast[i].day.mintemp_c + ' °C';
             let listMin = document.createElement('li');
             listMin.innerHTML = min;
             document.body.appendChild(listMin);
             display.appendChild(listMin);
 
-            average = 'Average temperature: ' + forecast[i].day.avgtemp_c + ' °C';
+            average = 'Keskilämpötila: ' + forecast[i].day.avgtemp_c + ' °C';
             let listAverage = document.createElement('li');
             listAverage.innerHTML = average;
             document.body.appendChild(listAverage);
             display.appendChild(listAverage);
 
-            chanceR = 'Chance of rain: ' + forecast[i].day.daily_chance_of_rain + ' %';
+            chanceR = 'Vesisateen mahdollisuus: ' + forecast[i].day.daily_chance_of_rain + ' %';
             let listChanceR = document.createElement('li');
             listChanceR.innerHTML = chanceR;
             document.body.appendChild(listChanceR);
             display.appendChild(listChanceR);
 
-            chanceS = 'Chance of snow: ' + forecast[i].day.daily_chance_of_snow + ' %';
+            chanceS = 'Lumisateen mahdollisuus: ' + forecast[i].day.daily_chance_of_snow + ' %';
             let listChanceS = document.createElement('li');
             listChanceS.innerHTML = chanceS;
             document.body.appendChild(listChanceS);
             display.appendChild(listChanceS);
 
-            fore_weather = 'Condition: ' + forecast[i].day.condition.text;
+            fore_weather = 'Säätila: ' + forecast[i].day.condition.text;
             let listForeWeather = document.createElement('li');
             listForeWeather.innerHTML = fore_weather;
             document.body.appendChild(listForeWeather);
             display.appendChild(listForeWeather);
 
-            sunrise = 'Sunrise: ' + forecast[i].astro.sunrise;
+            sunrise = 'Auringonnousu: ' + forecast[i].astro.sunrise;
             let listSunrise = document.createElement('li');
             listSunrise.innerHTML = sunrise;
             document.body.appendChild(listSunrise);
             display.appendChild(listSunrise);
 
-            sunset = 'Sunset: ' + forecast[i].astro.sunset;
+            sunset = 'Auringonlasku: ' + forecast[i].astro.sunset;
             let listSunset = document.createElement('li');
             listSunset.innerHTML = sunset;
             document.body.appendChild(listSunset);
