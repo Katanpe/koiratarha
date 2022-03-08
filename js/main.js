@@ -39,9 +39,9 @@ function success(pos) {
           latitude: pointsOfInterest[i].latitude,
           longitude: pointsOfInterest[i].longitude,
         };
-        const button = document.querySelector('#buttonNavigation');
+        const button = document.querySelector('#navigationBtn');
         button.replaceWith(button.cloneNode(true));
-        document.querySelector('#buttonNavigation').
+        document.querySelector('#navigationBtn').
             addEventListener('click', function() {
               console.log('Klikattu!');
               getRoute(crd, targetCrd);
@@ -235,9 +235,9 @@ function success2(pos) {
           latitude: pointsOfInterest[i].latitude,
           longitude: pointsOfInterest[i].longitude,
         };
-        const button = document.querySelector('#buttonNavigation');
+        const button = document.querySelector('#navigationBtn');
         button.replaceWith(button.cloneNode(true));
-        document.querySelector('#buttonNavigation').
+        document.querySelector('#navigationBtn').
             addEventListener('click', function() {
               console.log('Klikattu!');
               getRoute(crd, targetCrd);

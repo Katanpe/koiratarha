@@ -13,8 +13,11 @@ aside {
 }
 
 #map {
-    width: 100%;
+    min-width: 420px;
+    width: 50%;
     height: 400px;
+    margin: 20px;
+    border-radius: 20px;
 }
 
 #content {
@@ -110,4 +113,22 @@ button {
     #content {
         flex-flow: column wrap;
     }
+}
+
+#textsOfPage {
+    display: flex;
+    flex-wrap: wrap;
+    background: #EDDCD2;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#radioGroupGroup, #placeInfoGroup {
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+#submitBtn, #navigationBtn {
+    margin: 20px;
 }
