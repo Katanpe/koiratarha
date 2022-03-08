@@ -68,11 +68,15 @@ nav li a:hover {
 }
 
 #pics {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 section {
     background: #CB997E;
     border-radius: 50px;
+    padding: 10px;
 }
 
 section p {
@@ -101,6 +105,10 @@ button {
     width: fit-content;
     margin: auto;
     font-family: inherit;
+}
+
+button:hover {
+    background: #A5A58D;
 }
 
 .lightbox-link {
