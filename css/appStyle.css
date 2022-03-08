@@ -64,7 +64,7 @@ nav li:nth-last-child(2) {
 }
 
 nav li a:hover {
-
+    background: #A5A58D;
 }
 
 #pics {
