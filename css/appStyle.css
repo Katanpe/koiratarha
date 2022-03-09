@@ -49,6 +49,7 @@ nav ul {
     border: 3px solid #CB997E;
     justify-content: center;
     margin: 20px 0 20px 0;
+    padding-left: 0;
 }
 
 nav li {
@@ -56,6 +57,7 @@ nav li {
     margin: 0;
     padding: 0;
     border: 3px solid #F0EFEB;
+    width: 10%;
 }
 
 nav li a {
@@ -78,10 +80,11 @@ nav li a:hover {
 }
 
 #pics {
+
 }
 
 img {
-    padding: 10px;
+    padding: 5px;
 }
 
 section {
@@ -123,7 +126,13 @@ button {
     padding: 20px;
     text-decoration: none;
 }
+@media only screen and (max-width: 950px){
+    nav li {
+        font-size: 0;
+        width: 100px;
+    }
 
+}
 @media only screen and (max-width: 620px) {
     #content {
         flex-flow: column wrap;
@@ -143,9 +152,11 @@ button {
         justify-content: center;
         width: 100%;
     }
+
     #map {
         width: 100%;
     }
+
 }
 
 #mapAndTexts {
@@ -220,4 +231,67 @@ span.coral {
     color: coral;
     padding: 5px;
     border-radius: 5px;
+}
+
+.creatorPic {
+    background-color: #CB997E;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+#videoSection {
+    padding-bottom: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#creatorUL {
+    margin-top:0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.creatorLI {
+    list-style-type: none;
+}
+
+#videoHead {
+    background-color: #FFF1E6;
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    padding:5px;
+    font-size: 20px;
+}
+
+#creatorHead {
+    margin-bottom: 0;
+    margin-top: 30px;
+    background-color: #CB997E;
+    width:20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    padding:5px;
+    font-size: 20px;
+}
+
+#videoContainer {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
 }
