@@ -14,7 +14,7 @@ aside {
 
 #map {
     min-width: 420px;
-    width: 60%;
+    width: 50%;
     height: 500px;
     margin: 20px;
     border-radius: 20px;
@@ -125,10 +125,36 @@ button {
 }
 
 #radioGroupGroup, #placeInfoGroup {
-    padding: 0 20px 20px 20px;
+    padding: 20px 40px 20px 40px;
     text-align: center;
 }
 
 #submitBtn, #navigationBtn {
     margin: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span.green {
+    color: seagreen;
+}
+
+span.purple {
+    color: mediumpurple;
+}
+
+span.blue {
+    color: deepskyblue;
+}
+
+span.pink {
+    color: hotpink;
+}
+
+span.coral {
+    color: coral;
 }

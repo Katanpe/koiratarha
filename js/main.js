@@ -131,19 +131,19 @@ function getRoute(lahto, kohde) {
       let color = '';
       switch (googleKoodattuReitti[i].mode) {
         case 'WALK':
-          color = 'green';
+          color = 'seagreen';
           break;
         case 'BUS':
-          color = 'red';
+          color = 'mediumpurple';
           break;
         case 'RAIL':
-          color = 'cyan';
+          color = 'deepskyblue';
           break;
         case 'TRAM':
-          color = 'magenta';
+          color = 'hotpink';
           break;
         default:
-          color = 'blue';
+          color = 'coral';
           break;
       }
       const reitti = (googleKoodattuReitti[i].legGeometry.points);
