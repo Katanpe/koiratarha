@@ -25,10 +25,19 @@ aside {
     flex-flow: row wrap;
 }
 
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 30px;
+}
+
 body {
     background: #FFF1E6;
     text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -71,6 +80,10 @@ nav li a:hover {
 #pics {
 }
 
+img {
+    padding: 10px;
+}
+
 section {
     background: #CB997E;
     border-radius: 50px;
@@ -83,6 +96,7 @@ section p {
 section ul {
     list-style-type: none;
     flex-flow: column wrap;
+    padding: 0 20px 20px 20px;
 }
 
 section li {
@@ -114,6 +128,16 @@ button {
     #content {
         flex-flow: column wrap;
     }
+
+    main {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+        left: 0;
+    }
+
     #textsOfPage {
         display: flex;
         justify-content: center;
