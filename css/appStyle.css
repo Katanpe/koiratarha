@@ -15,7 +15,7 @@ aside {
 #map {
     min-width: 420px;
     width: 50%;
-    height: 500px;
+    height: 460px;
     margin: 20px;
     border-radius: 20px;
 }
@@ -39,6 +39,7 @@ nav ul {
     flex-flow: row wrap;
     border: 3px solid #CB997E;
     justify-content: center;
+    margin: 20px 0 20px 0;
 }
 
 nav li {
@@ -109,10 +110,21 @@ button {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
     #content {
         flex-flow: column wrap;
     }
+    #textsOfPage {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#mapAndTexts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #textsOfPage {
@@ -120,13 +132,21 @@ button {
     flex-wrap: wrap;
     background: #EDDCD2;
     margin: 20px;
-    padding: 20px;
     border-radius: 20px;
+    min-width: 420px;
 }
 
 #radioGroupGroup, #placeInfoGroup {
-    padding: 20px 40px 20px 40px;
+    padding: 20px 40px 0 40px;
+    text-align: left;
+}
+
+#placeInfo {
     text-align: center;
+}
+
+#routeColours {
+    padding: 0 40px 20px 40px;
 }
 
 #submitBtn, #navigationBtn {
@@ -140,21 +160,36 @@ button {
 }
 
 span.green {
+    background: #FFF1E6;
     color: seagreen;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 span.purple {
+    background: #FFF1E6;
     color: mediumpurple;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 span.blue {
+    background: #FFF1E6;
     color: deepskyblue;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 span.pink {
+    background: #FFF1E6;
     color: hotpink;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 span.coral {
+    background: #FFF1E6;
     color: coral;
+    padding: 5px;
+    border-radius: 5px;
 }
