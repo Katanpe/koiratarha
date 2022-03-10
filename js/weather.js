@@ -1,9 +1,10 @@
 'use strict';
 
-const weather_api_forecast = 'http://api.weatherapi.com/v1/forecast.json?key=6336235ca72d4b6eb28180539220103&q=Helsinki&days=5&aqi=yes&alerts=yes&lang=fi';
+const weather_api_forecast = 'http://api.weatherapi.com/v1/forecast.json?key=6336235ca72d4b6eb28180539220103&q=Helsinki&days=3&aqi=yes&alerts=yes&lang=fi';
 const display = document.querySelector('#weatherPrint');
 const weather_form = document.querySelector('form');
-let current, date, temp, weather, feeling, forecast, futureDate, max, min, average, chanceR, chanceS, fore_weather, sunrise, sunset, time;
+let current, date, temp, weather, icon, feeling, forecast, futureDate, max, min,
+    average, chanceR, chanceS, sunrise, sunset, fore_weather, futureIcon, time;
 
 weather_form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -45,6 +46,12 @@ weather_form.addEventListener('submit', function(event) {
         listWeather.innerHTML = weather;
         document.body.appendChild(listWeather);
         display.appendChild(listWeather);
+
+        icon = current.condition.icon;
+        let listIcon = document.createElement('img');
+        listIcon.src = icon;
+        document.body.appendChild(listIcon);
+        display.appendChild(listIcon);
 
         let infoForecast = document.createElement('h2');
         infoForecast.innerHTML = 'Sääennuste';
@@ -89,12 +96,6 @@ weather_form.addEventListener('submit', function(event) {
             document.body.appendChild(listChanceS);
             display.appendChild(listChanceS);
 
-            fore_weather = 'Säätila: ' + forecast[i].day.condition.text;
-            let listForeWeather = document.createElement('li');
-            listForeWeather.innerHTML = fore_weather;
-            document.body.appendChild(listForeWeather);
-            display.appendChild(listForeWeather);
-
             sunrise = 'Auringonnousu: ' + forecast[i].astro.sunrise;
             let listSunrise = document.createElement('li');
             listSunrise.innerHTML = sunrise;
@@ -106,6 +107,18 @@ weather_form.addEventListener('submit', function(event) {
             listSunset.innerHTML = sunset;
             document.body.appendChild(listSunset);
             display.appendChild(listSunset);
+
+            fore_weather = 'Säätila: ' + forecast[i].day.condition.text;
+            let listForeWeather = document.createElement('li');
+            listForeWeather.innerHTML = fore_weather;
+            document.body.appendChild(listForeWeather);
+            display.appendChild(listForeWeather);
+
+            futureIcon = forecast[i].day.condition.icon;
+            let listFutureIcon = document.createElement('img');
+            listFutureIcon.src = futureIcon;
+            document.body.appendChild(listFutureIcon);
+            display.appendChild(listFutureIcon);
           }
       }).
       catch(function(error) {
