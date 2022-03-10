@@ -315,3 +315,36 @@ footer p {
     margin-top: 0;
     margin-bottom: 20px;
 }
+
+#contentVideoPage {
+    max-width: 640px;
+    margin: auto;
+    background: #EDDCD2;
+    padding: 20px;
+}
+
+#videoPage {
+    width: 100%;
+}
+
+#videoPage figure {
+    padding: 20px;
+}
+
+#videoHtml {
+    padding: 20px;
+}
+
+#linkToPlanning {
+    margin: 20px 0 0 0;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    background: #DDBEA9;
+    padding: 5px;
+    border-radius: 5px;
+}
