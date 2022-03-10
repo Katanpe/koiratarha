@@ -148,6 +148,7 @@ button:hover {
     aside {
         width: 100%;
         left: 0;
+        top: 20px;
     }
 
     #textsOfPage {
