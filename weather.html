@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <link href="css/appStyle.css" rel="stylesheet">
     <link href="lightbox2-2.11.3/dist/css/lightbox.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Raleway&display=swap" rel="stylesheet">
     <title>Sää ja kuvat</title>
 </head>
 <body>
-<!-- saa muuttaa vapaasti -->
+
 <div id="content">
 
     <header>
+
         <h1>Koiratarha</h1>
+
         <nav>
             <ul>
                 <li><a href="index.html">Kartat<br><img class="icon" src="kuvat/Kuvia/map50color.png" width="50" height="50" alt="Kartta-ikoni"></a></li>
@@ -22,29 +22,37 @@
                 <li><a href="private.html">Yksityistä<br><img class="icon" src="kuvat/Kuvia/private50color.png" width="50" height="50" alt="Lukko-ikoni"></a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
         <form action="http://api.weatherapi.com">
             <section>
+
+                <h2>Säätiedot</h2>
+
                 <br/>
                     <p>
                         <button type="submit">Päivitä sää</button>
                     </p>
                 <br/>
+
                 <ul id="weatherPrint">
-                    <!-- Space for weather -->
+                    <!-- Tila sää-tiedoille -->
                 </ul>
+
             </section>
         </form>
     </main>
 
     <aside>
         <section>
-                <br/>
-                <h2>Kuvia</h2>
+
+            <h2>Kuvia</h2>
 
             <div id="pics">
+
+                <!-- Kuvien runsaus, sivulla huomattavasti pienemmässä tilassa -->
 
                 <a class="lightbox-link" href="kuvat/Kuvia/1kuva.jpg" data-lightbox="image-1" data-title="1) Talvisia maisemia koirapuistosta.">
                     <img src="kuvat/thumbnails/kuva1.jpg" style="width: 150px" alt="Talvisia maisemia koirapuistosta">
@@ -142,17 +150,21 @@
                 <a class="lightbox-link" href="kuvat/Kuvia/Kuu-koirapuisto2.jpg" data-lightbox="image-1" data-title="32) Kuun ensimmäinen koirapuisto">
                     <img src="kuvat/thumbnails/Kuu-koirapuisto2-thumb.jpg" style="width: 150px" alt="Kuun ensimmäinen koirapuisto">
                 </a>
+
             </div>
+
         </section>
     </aside>
 
 </div>
+
 <footer class="projectDetails">
     <a href="index.html"><img src="kuvat/Kuvia/map50color.png" width="50" height="50" alt="Kartta-ikoni"></a>
     <a href="#content"><img class="icon" src="kuvat/Kuvia/temp50color.png" width="50" height="50" alt="Lämpötila-ikoni"></a>
     <a href="private.html"><img src="kuvat/Kuvia/private50color.png" width="50" height="50" alt="Lukko-ikoni"></a>
     <p>Web-tekniikat ja digitaalinen media TX00DJ99-3026<br>Metropolia Ammattikorkekoulu<br>2022</p>
 </footer>
+
 <script src="js/weather.js"></script>
 <script src="lightbox2-2.11.3/dist/js/lightbox-plus-jquery.js"></script>
 </body>
