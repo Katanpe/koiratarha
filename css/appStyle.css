@@ -300,6 +300,11 @@ span.coral {
     height: 100%;
 }
 
+.projectDetails {
+    margin-top: 20px;
+}
+
 footer p {
     margin-top: 0;
+    margin-bottom: 20px;
 }
