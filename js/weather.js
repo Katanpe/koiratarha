@@ -25,7 +25,7 @@ weather_form.addEventListener('submit', function(event) {
         //Haetaan jokainen sää-objektin osa API:sta ja luodaan sille lista elementti.
 
         let infoCurrent = document.createElement('h2');
-        infoCurrent.innerHTML = 'Sää';
+        infoCurrent.innerHTML = 'Tällä hetkellä';
         document.body.appendChild(infoCurrent);
         display.appendChild(infoCurrent);
 
@@ -60,7 +60,7 @@ weather_form.addEventListener('submit', function(event) {
         display.appendChild(listIcon);
 
         let infoForecast = document.createElement('h2');
-        infoForecast.innerHTML = 'Sääennuste';
+        infoForecast.innerHTML = 'Ennuste';
         document.body.appendChild(infoForecast);
         display.appendChild(infoForecast);
 
