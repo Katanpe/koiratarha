@@ -6,6 +6,8 @@ const weather_form = document.querySelector('form');
 let current, date, temp, weather, icon, feeling, forecast, futureDate, max, min,
     average, chanceR, chanceS, sunrise, sunset, fore_weather, futureIcon, time;
 
+//Luodaan funktio, joka hyödyntää API:a.
+
 weather_form.addEventListener('submit', function(event) {
   event.preventDefault();
   fetch(weather_api_forecast).
@@ -13,10 +15,14 @@ weather_form.addEventListener('submit', function(event) {
         return response.json();
       }).
       then(function(layout) {
-        console.log(layout);
+
+        //Nappia painettaessa, sää-tiedot päivittyy, eikä toistu uudelleen.
+
         clearAllWeather();
         current = layout.current;
         forecast = layout.forecast.forecastday;
+
+        //Haetaan jokainen sää-objektin osa API:sta ja luodaan sille lista elementti.
 
         let infoCurrent = document.createElement('h2');
         infoCurrent.innerHTML = 'Sää';
@@ -57,6 +63,8 @@ weather_form.addEventListener('submit', function(event) {
         infoForecast.innerHTML = 'Sääennuste';
         document.body.appendChild(infoForecast);
         display.appendChild(infoForecast);
+
+        //Sääennusteessa on useampia päiviä, joten objekteja varten on tehtävä niitä läpikäyvä for-looppi.
 
           for(let i = 0; i < forecast.length; i++) {
 
@@ -125,6 +133,8 @@ weather_form.addEventListener('submit', function(event) {
         console.log(error);
       });
 });
+
+//Funktio, joka tyhjentää edelliset sää-tiedot.
 
 function clearAllWeather() {
   document.querySelector('#weatherPrint').innerHTML = '';
