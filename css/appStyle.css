@@ -320,7 +320,7 @@ footer p {
     max-width: 640px;
     margin: auto;
     background: #EDDCD2;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
 }
 
 #videoPage {
@@ -335,15 +335,15 @@ footer p {
     padding: 20px;
 }
 
-#linkToPlanning {
+#link {
     margin: 20px 0 0 0;
 }
 
-a {
+#link a {
     color: black;
 }
 
-a:hover {
+#link a:hover {
     background: #DDBEA9;
     padding: 5px;
     border-radius: 5px;
