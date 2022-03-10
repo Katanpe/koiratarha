@@ -13,6 +13,7 @@ weather_form.addEventListener('submit', function(event) {
       }).
       then(function(layout) {
         console.log(layout);
+        clearAllWeather();
         current = layout.current;
         forecast = layout.forecast.forecastday;
 
@@ -111,3 +112,7 @@ weather_form.addEventListener('submit', function(event) {
         console.log(error);
       });
 });
+
+function clearAllWeather() {
+  document.querySelector('#weatherPrint').innerHTML = '';
+}
